@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+FlowBeauty web app (Next.js + Supabase).
 
 ## Getting Started
 
-First, run the development server:
+### 1) Configure Supabase
+
+- Copy `.env.example` → `.env.local`
+- Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- Run the SQL in `supabase/schema.sql` inside the Supabase SQL editor
+
+To make your account an admin:
+
+```sql
+update public.profiles set is_admin = true where id = '<your-auth-user-uuid>';
+```
+
+### 2) Run the dev server
 
 ```bash
 npm run dev
